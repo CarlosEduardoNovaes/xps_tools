@@ -2,6 +2,7 @@
 
 import io
 import os
+import ntpath
 
 from XNALaraMesh import bin_ops
 from XNALaraMesh import read_ascii_xps
@@ -230,7 +231,7 @@ def readMeshes(file, xpsHeader, hasBones):
         textures = []
         textureCount = bin_ops.readUInt32(file)
         for texId in range(textureCount):
-            textureFile = os.path.basename(readFilesString(file))
+            textureFile = ntpath.basename(readFilesString(file))
             # print('Texture file', textureFile)
             uvLayerId = bin_ops.readUInt32(file)
 
